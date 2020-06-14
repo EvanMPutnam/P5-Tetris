@@ -276,7 +276,8 @@ class Game {
         var allMovesValid = true
         for (y = 0; y < Y_SPACES; y++) {
             for (x = 0; x < X_SPACES; x++) {
-                if (this.board[y][x].activePiece && x-1 >= 0 && (this.board[y][x-1].activePiece || !this.board[y][x-1].tetrinoPiece)) {
+                if (this.board[y][x].activePiece && x-1 >= 0 && 
+                    (this.board[y][x-1].activePiece || !this.board[y][x-1].tetrinoPiece)) {
                     tempBoard[y][x-1] = this.board[y][x]
                 } else if (this.board[y][x].activePiece) {
                     allMovesValid = false
@@ -296,7 +297,8 @@ class Game {
         var allMovesValid = true
         for (y = 0; y < Y_SPACES; y++) {
             for (x = X_SPACES - 1; x >= 0; x--) {
-                if (this.board[y][x].activePiece && x+1 < X_SPACES && (this.board[y][x+1].activePiece || !this.board[y][x+1].tetrinoPiece)) {
+                if (this.board[y][x].activePiece && x+1 < X_SPACES && 
+                    (this.board[y][x+1].activePiece || !this.board[y][x+1].tetrinoPiece)) {
                     tempBoard[y][x+1] = this.board[y][x]
                 } else if (this.board[y][x].activePiece) {
                     allMovesValid = false
